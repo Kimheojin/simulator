@@ -26,3 +26,6 @@ networks:
         external: true
     control-network:
         external: true
+
+## cors 설정 필요 할 거 같어
+https://control-front-navy.vercel.app/
