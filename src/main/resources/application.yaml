@@ -14,3 +14,12 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: false
+
+simulator:
+  interval-ms: 5000
+  duration: 5m
+  offline-ratio: 0.1
+
+control-api:
+  base-url: http://control-api:8080
+  api-key: simulator-secret
