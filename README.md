@@ -9,3 +9,20 @@ rsync -avzP -e "ssh -p 1225 -i ~/.ssh/id_ed25519_server" control-api/ jin@heojin
 ## DB 명
 
 - bus_service_db
+
+## 기타 사항
+
+- 9095 포트로 열기
+
+## network 목록
+
+    networks:
+      - my-network
+      - control-network
+        - simul-network  
+
+networks:
+    my-network:
+        external: true
+    control-network:
+        external: true
