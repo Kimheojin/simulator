@@ -17,5 +17,5 @@ simulator:
   offline-ratio: 0.1
 
 control-api:
-  base-url: http://control-api:8080
+  base-url: http://control-api:9090
   api-key: simulator-secret
