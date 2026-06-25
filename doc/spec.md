@@ -5,6 +5,9 @@
 - 로컬 개발 및 테스트 실행을 위해 기본 datasource를 H2 인메모리 DB로 설정했다.
 - H2는 MySQL 호환 모드로 실행하며, 콘솔은 `/h2-console` 경로에서 활성화한다.
 - JPA 스키마 생성은 임시 로컬 환경 기준으로 `ddl-auto: update`를 사용한다.
+- 기본 Spring profile은 `local`이며, `local` profile은 H2 datasource를 사용한다.
+- `prod` profile은 MySQL datasource를 사용하며 Docker Compose 등에서는 `SPRING_PROFILES_ACTIVE=prod`로 전환한다.
+- MySQL 접속 정보는 `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_DATABASE`, `MYSQL_USERNAME`, `MYSQL_PASSWORD` 환경변수로 설정한다.
 - Spring Security 의존성을 추가하고 MVP 초기 단계 기준으로 모든 요청을 허용하도록 설정했다.
 - `https://control-front-navy.vercel.app` 출처의 CORS 요청을 허용했다.
 - 클라이언트가 simulator 서버에 `POST /v2/simulations/start`를 호출하면 약 5분 동안 5초 간격으로 Mock telemetry를 생성해 backend 서버의 `POST /v1/internal/telemetry`로 전송하도록 구현했다.
