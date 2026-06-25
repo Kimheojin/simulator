@@ -26,9 +26,3 @@ networks:
         external: true
     control-network:
         external: true
-
-## cors 설정 필요 할 거 같어
-https://control-front-navy.vercel.app/
-- 임의로 h2 설정도 부탁해야함, application.yml 설정한 후
-  - 이렇게 진행하는 게 맞는 거 같은데 
-  - 아
