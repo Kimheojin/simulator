@@ -14,3 +14,11 @@
 - simulator 실행 상태 조회 API로 `GET /v2/simulations/current`를 추가했다.
 - simulator는 `buses`, `routes`, `stops`, `route_stops` 기준 데이터를 읽기만 하며, `bus_locations`, `bus_events`에는 직접 접근하지 않는다.
 - backend 호출은 Spring `RestClient`를 사용하고, `control-api.api-key`가 설정되어 있으면 `X-API-KEY` 헤더를 포함한다.
+
+## 2026-06-26
+
+- simulator 서버 포트를 `9095`로 명시했다.
+- Docker Compose 실행 구성을 추가하고 컨테이너 이름을 `simul`로 고정했다.
+- Compose에서는 `SPRING_PROFILES_ACTIVE=prod`로 실행하며, MySQL 접속 기본값은 `dummy-mysql:3306/api`, 사용자 `api_user`, 비밀번호 `dummy`를 사용한다.
+- Compose 서비스는 외부 Docker 네트워크 `my-network`, `control-network`, `simul-network`에 연결한다.
+- Dockerfile은 Java 21 기반 멀티스테이지 빌드로 구성하고 BuildKit Gradle 캐시 마운트를 사용한다.

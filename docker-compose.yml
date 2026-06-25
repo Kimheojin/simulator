@@ -1,0 +1,27 @@
+services:
+  simul:
+    container_name: simul
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9095:9095"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      MYSQL_HOST: ${MYSQL_HOST:-dummy-mysql}
+      MYSQL_PORT: ${MYSQL_PORT:-3306}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-api}
+      MYSQL_USERNAME: ${MYSQL_USERNAME:-api_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-dummy}
+    networks:
+      - my-network
+      - control-network
+      - simul-network
+
+networks:
+  my-network:
+    external: true
+  control-network:
+    external: true
+  simul-network:
+    external: true

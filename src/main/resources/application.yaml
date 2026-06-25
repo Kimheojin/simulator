@@ -8,6 +8,9 @@ spring:
       ddl-auto: update
     open-in-view: false
 
+server:
+  port: 9095
+
 simulator:
   interval-ms: 5000
   duration: 5m
