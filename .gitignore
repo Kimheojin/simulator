@@ -35,3 +35,13 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Custom
+
+doc/backend.md
+doc/endpoint.md
+doc/erd.md
+doc/front.md
+doc/overview.md
+doc/seedData.md
+doc/simul.md
